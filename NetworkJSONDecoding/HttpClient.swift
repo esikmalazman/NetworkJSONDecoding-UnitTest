@@ -40,7 +40,7 @@ final class HttpClient {
     ///   - data: downloaded data from URLSessionDataTask
     ///   - model: type for data to be converted into
     /// - Returns: return object with decodable type
-    func processData<T:Decodable>(_ data : Data, _ model : T.Type) throws -> Decodable {
+    func processData<T:Decodable>(_ data : Data, _ model : T.Type) throws -> T {
         let decoder = JSONDecoder()
         let content = try decoder.decode(model, from: data)
         return content

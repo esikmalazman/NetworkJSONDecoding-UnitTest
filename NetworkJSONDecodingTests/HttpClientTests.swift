@@ -18,12 +18,12 @@ final class HttpClientTests: XCTestCase {
     func test_download_withData_shouldReturnData() {
         let expectation = expectation(description: "Test Download")
         let request = makeUserURLRequest()
-        session.data = makeMockUserData()
+        session.data = makeMockUserDataFromString()
         
         sut.downloadData(session, withURL: request) { result in
             switch result {
             case .success(let success):
-                XCTAssertEqual(success, self.makeMockUserData())
+                XCTAssertEqual(success, self.makeMockUserDataFromString())
             case .failure(_):
                 XCTFail("Download failed where it should not to")
             }
@@ -41,7 +41,7 @@ final class HttpClientTests: XCTestCase {
         
         sut.downloadData(session, withURL: request) { result in
             switch result {
-            case .success(let success):
+            case .success(_):
                 XCTFail("Download success where it should not to")
             case .failure(let error):
                 XCTAssertNotNil(error)
@@ -50,6 +50,15 @@ final class HttpClientTests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 0.01)
+    }
+    
+    func test_processValidData() throws {
+        let expectedData = UserModel(userId: 1, id: 1, title: "User Title", completed: true)
+        session.data = try makeMockUserDataFromObject()
+        
+        let result = try sut.processData(session.data ?? Data(), UserModel.self)
+        
+        XCTAssertEqual(expectedData, result)
     }
 }
 
@@ -62,7 +71,7 @@ private extension HttpClientTests {
         return request
     }
     
-    func makeMockUserData() -> Data {
+    func makeMockUserDataFromString() -> Data {
         let data =
     """
     {
@@ -74,5 +83,12 @@ private extension HttpClientTests {
     """.data(using: .utf8)!
         
         return data
+    }
+    
+    func makeMockUserDataFromObject()  throws -> Data {
+        let data = UserModel(userId: 1, id: 1, title: "User Title", completed: true)
+        let encoder = JSONEncoder()
+        let content = try encoder.encode(data)
+        return content
     }
 }
