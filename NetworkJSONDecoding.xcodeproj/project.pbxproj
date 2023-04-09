@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F69679729E287D900A8A71B /* NetworkJSONDecoding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F69678E29E287D900A8A71B /* NetworkJSONDecoding.framework */; };
-		7F69679C29E287D900A8A71B /* NetworkJSONDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69679B29E287D900A8A71B /* NetworkJSONDecodingTests.swift */; };
-		7F69679D29E287D900A8A71B /* NetworkJSONDecoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F69679129E287D900A8A71B /* NetworkJSONDecoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F6967A729E287F700A8A71B /* HttpClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6967A629E287F700A8A71B /* HttpClientTests.swift */; };
+		7F6967A929E2881600A8A71B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6967A829E2881600A8A71B /* HttpClient.swift */; };
+		7F6967AC29E288A900A8A71B /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6967AB29E288A900A8A71B /* UserModel.swift */; };
+		7F6967AE29E28B1A00A8A71B /* URLSessionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6967AD29E28B1A00A8A71B /* URLSessionContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,9 +26,11 @@
 
 /* Begin PBXFileReference section */
 		7F69678E29E287D900A8A71B /* NetworkJSONDecoding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkJSONDecoding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F69679129E287D900A8A71B /* NetworkJSONDecoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkJSONDecoding.h; sourceTree = "<group>"; };
 		7F69679629E287D900A8A71B /* NetworkJSONDecodingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkJSONDecodingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F69679B29E287D900A8A71B /* NetworkJSONDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkJSONDecodingTests.swift; sourceTree = "<group>"; };
+		7F6967A629E287F700A8A71B /* HttpClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientTests.swift; sourceTree = "<group>"; };
+		7F6967A829E2881600A8A71B /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		7F6967AB29E288A900A8A71B /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		7F6967AD29E28B1A00A8A71B /* URLSessionContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +73,9 @@
 		7F69679029E287D900A8A71B /* NetworkJSONDecoding */ = {
 			isa = PBXGroup;
 			children = (
-				7F69679129E287D900A8A71B /* NetworkJSONDecoding.h */,
+				7F6967AA29E288A000A8A71B /* Model */,
+				7F6967A829E2881600A8A71B /* HttpClient.swift */,
+				7F6967AD29E28B1A00A8A71B /* URLSessionContract.swift */,
 			);
 			path = NetworkJSONDecoding;
 			sourceTree = "<group>";
@@ -77,9 +83,17 @@
 		7F69679A29E287D900A8A71B /* NetworkJSONDecodingTests */ = {
 			isa = PBXGroup;
 			children = (
-				7F69679B29E287D900A8A71B /* NetworkJSONDecodingTests.swift */,
+				7F6967A629E287F700A8A71B /* HttpClientTests.swift */,
 			);
 			path = NetworkJSONDecodingTests;
+			sourceTree = "<group>";
+		};
+		7F6967AA29E288A000A8A71B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F6967AB29E288A900A8A71B /* UserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,7 +103,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F69679D29E287D900A8A71B /* NetworkJSONDecoding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +157,11 @@
 				TargetAttributes = {
 					7F69678D29E287D900A8A71B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					7F69679529E287D900A8A71B = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -191,6 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6967AE29E28B1A00A8A71B /* URLSessionContract.swift in Sources */,
+				7F6967AC29E288A900A8A71B /* UserModel.swift in Sources */,
+				7F6967A929E2881600A8A71B /* HttpClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F69679C29E287D900A8A71B /* NetworkJSONDecodingTests.swift in Sources */,
+				7F6967A729E287F700A8A71B /* HttpClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +353,7 @@
 		7F6967A129E287D900A8A71B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -356,6 +375,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -363,6 +383,7 @@
 		7F6967A229E287D900A8A71B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -391,14 +412,22 @@
 		7F6967A429E287D900A8A71B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66846BKCQ4;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.esikmalazman.NetworkJSONDecodingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -406,10 +435,17 @@
 		7F6967A529E287D900A8A71B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 66846BKCQ4;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.esikmalazman.NetworkJSONDecodingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
